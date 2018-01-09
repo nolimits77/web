@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="reset.css">
+    <title>유동적 화면 레이아웃</title>
+<style>
+    html, body{
+/*        background-color: red;*/
+        height: 100%;   /* 높이지정*/
+
+    }
+    #container {
+        height: 100%; /*높이 한번더 지정*/
+
+    }
+    #left, #right {
+        float: left;
+        width: 50%; /*너비 절반 */
+        height: 100%; /*높이 한번더지정 */
+    }
+    #left{
+        background:url(brdMain_story.jpg)no-repeat center;
+/*        background-size: 760px 760px;*/
+/*        background-size: cover;*/
+        position: relative; /* */
+    }
+    #left > h1 { /* circle만들기 */
+        z-index: 1;
+        width: 300px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #FFD8D8;
+        line-height: 100px;
+        text-align: center;
+        position: absolute; 
+        /*상위요소인 #left에 position:relative준다음 현재 요소에 absolute주면됨 */
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%); 
+        /*화면 정중앙 배치: 트랜스폼주기전에 top,left:50%주고 다음 값 주면됨. */
+        font-size: 2em;
+        font-weight: 900;
+        letter-spacing: -1px;
+        color: white;
+    }
+    #right{
+      
+    }
+    #right > li { /* 오른쪽 메뉴 */
+        height: 33.33%;
+        border-bottom: 1.5px solid orange;
+        box-sizing: border-box;
+        background-color: #FFD8D8;
+        transition: 0.6s;
+        letter-spacing:5px;
+    }
+    #right > li:hover { /*오른쪽메뉴 마우스효과 */
+        background-color: white;
+        letter-spacing: 50px;
+        text-indent: 40px;
+        text-shadow: 5px 5px 4px #BDBDBD;
+
+    }
+    #right > li:last-child { /*오른쪽메뉴 각각li 하단에 색깔 없애기 */
+        border-bottom: none;
+    }
+    #right > li > a { /*오른쪽메뉴 li에 a태그 */
+        display: block;
+        height: 100%;
+        text-decoration: none;
+        color: #FF5E00;
+        font-size: 2.7em;
+        text-align: center;
+        /*line-height:  %단위의 기준:글자의 크기*/
+        position: relative;
+        text-decoration: none;
+        font-weight: bold;
+        
+
+    }
+    #right > li > a > span {
+        position: absolute; /*상위요소인 #right > li > a요소에 position:relative주는게 먼저. */
+        top:50%; left: 50%;
+        transform: translate(-50%, -50%); /*화면 정중앙 배치:트랜스폼주기전에 top,left:50%주고 다음 값 주면됨. */
+        
+    }
+    
+</style>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    jQuery(function () {
+
+
+    });
+</script>
+</head>
+<body>
+
+    <div id="container">
+        <aside id="left">
+            <h1>TONYMOLY</h1>
+        </aside>
+
+        <ul id="right">
+            <li><a href="#"><span>EVENT</span></a></li>
+            <li><a href="Shop.html"><span>SHOP</span></a></li>
+            <li id="tvcf"><a href="Video.html"><span>VIDEO</span></a></li>
+        </ul>
+
+    </div>
+</body>
+</html>
