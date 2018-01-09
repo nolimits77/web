@@ -310,7 +310,7 @@
      
     #nav.fixed {            /*add class*/
         position: fixed;        
-        bottom: 680px;    
+        bottom: 630px;    
     
     /*이것이 관건이다 고정시키기 전의 상황과 같은 위치좌표를 적으면 됨*/
 
